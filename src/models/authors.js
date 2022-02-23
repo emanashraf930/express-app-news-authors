@@ -47,7 +47,7 @@ const authorsSchema = new mongoose.Schema({
     phone: {
         type: Number,
         validate(value) {
-            // !validator.isEmail(value)
+
             if (!validator.isMobilePhone(value)) {
                 throw new Error('the number is error .. please try again')
             }

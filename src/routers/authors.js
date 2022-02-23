@@ -15,7 +15,7 @@ router.get('/authors', (req, res) => {
 router.post('/authors', (req, res) => {
 
     const authors = new Authors(req.body)
-    Authors.save().then(() => {
+    authors.save().then(() => {
         res.status(200).send(authors)
     }).catch((e) => {
         res.status(400).send(e)
