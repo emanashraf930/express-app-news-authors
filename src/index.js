@@ -1,0 +1,16 @@
+const express = require('express')
+    // require('dotenv').config()
+const app = express()
+const port = process.env.PORT || 3000
+const newsRouter = require('./routers/news')
+    // const authorsRouter = require('./routers/authors')
+    // const Auther = require('./models/news')
+require('./db/mongoose')
+    // const router = express.Router()
+app.use(express.json())
+app.use(newsRouter)
+    // app.use(authorsRouter)
+console.log('hello')
+app.listen(port, () => {
+    console.log('Server is running')
+})
